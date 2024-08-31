@@ -40,7 +40,9 @@ CREATE TABLE Invoices (
     date DATETIME NOT NULL,
     car_id INT NOT NULL,
     salesperson_id INT NOT NULL,
+    customer_id INT NOT NULL,
     total_amount FLOAT NOT NULL,
     FOREIGN KEY (car_id) REFERENCES Cars(car_id) ON DELETE CASCADE,
+	FOREIGN KEY (customer_id) REFERENCES Customers(customer_id) ON DELETE CASCADE,
     FOREIGN KEY (salesperson_id) REFERENCES Salespersons(salesperson_id) ON DELETE CASCADE
 );
